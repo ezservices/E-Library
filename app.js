@@ -39,11 +39,11 @@ const books = [
 
 
 app.get("/",function(req,res){
-    res.redirect("/elibrary");
+    res.render("elibrary",{books:books});
 })
 
 app.get("/elibrary",function(req,res){
-    res.render("elibrary",{books:books});
+    res.redirect("/");
 })
 
 
@@ -54,7 +54,7 @@ app.get("/elibrary/:book",function (req,res) {
     
 })
 
-app.get("/elibrary/new",function(req,res){
+app.get("/new",function(req,res){
     res.send("Upload File");
 })
 
