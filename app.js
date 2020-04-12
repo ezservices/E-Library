@@ -55,7 +55,7 @@ app.get("/elibrary/:book",function (req,res) {
 })
 
 app.get("/elibrary/new",function(req,res){
-    res.render("new");
+    res.send("Upload File");
 })
 
 app.get("/login",function(req,res){
