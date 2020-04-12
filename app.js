@@ -8,6 +8,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
@@ -23,6 +24,14 @@ const books = [
     },
     {
         title:"Book3",
+        description:"ome quick example text to build on the card title and make up the bulk of the card's content."
+    },
+    {
+        title:"Book4",
+        description:"ome quick example text to build on the card title and make up the bulk of the card's content."
+    },
+    {
+        title:"Book5",
         description:"ome quick example text to build on the card title and make up the bulk of the card's content."
     },
 
@@ -43,6 +52,15 @@ app.get("/elibrary/:book",function (req,res) {
     const title = req.params.book;
     res.render("show",{title:title})
     
+})
+
+app.get("/elibrary/new",function(req,res){
+    res.render("new");
+})
+
+app.get("/login",function(req,res){
+
+    res.render("login")
 })
 
 
